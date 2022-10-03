@@ -200,3 +200,4 @@ FakesAssemblies/
 .idea
 
 node_modules
+dist
