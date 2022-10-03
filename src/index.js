@@ -1,4 +1,5 @@
 import './styles.css'
+import './init.js'
 
 var token = null;
 var projects = null; // array of records
@@ -369,6 +370,206 @@ const Products = {
 const URL = {
     Api: "https://survey.us.confirmit.com/wix/p194169735738.aspx"
 }
+
+LoadProducts();
+
+LoadHelp();
+
+// Click Handlers
+
+$('#edit-save-button').click(function () {
+
+        var parameters = {
+            Token: token,
+            Email: $('#edit-email').val(),
+            Name: $('#edit-name').val(),
+            Company: $('#edit-company').val(),
+            Url: $('#survey-url').val()
+        };
+
+        Api("UpdateUser", parameters, EditAccount_Success, Error);
+    }
+);
+
+$('#edit-cancel-button').click(function () {
+        $('#account-summary').fadeIn();
+        $('#edit-form').hide();
+        $('#edit-link').fadeIn();
+    }
+);
+
+$('#signup-button').click(function () {
+
+        var parameters = {
+            Id: $('#signup-userid').val(),
+            Email: $('#signup-email').val(),
+            Password: $('#signup-pw').val(),
+            Name: $('#signup-name').val(),
+            Company: $('#signup-company').val()
+        };
+
+        Api("AddUser", parameters, Signup_Success, Error);
+    }
+);
+
+$('#signup-cancel-button').click(function () {
+
+        $('#signup-userid').val('');
+        $('#signup-pw').val('');
+        $('#signup-email').val('');
+        $('#signup-name').val('');
+        $('#signup-company').val('');
+
+        $('#signup-form').hide();
+        $('#home-intro').fadeIn();
+        $('#login-form').fadeIn();
+    }
+);
+
+$('#login-button').click(function () {
+        var userid = $('#login-userid').val();
+        var pw = $('#login-pw').val();
+        Login(userid, pw);
+    }
+);
+
+$('#logout-button').click(function () {
+        LogOut();
+    }
+);
+
+$('#menuitem-users').click(function () {
+        var parameters = {
+            Token: token
+        };
+
+        Api("GetUsers", parameters, LoadUserList_Success, Error);
+    }
+);
+
+$('#respondent-emails').keydown(function (e) {
+        var upload_button = $('#upload-respondents-button');
+        upload_button.prop('disabled', true);
+        upload_button.addClass('disabled-button');
+        upload_button.text('Upload emails');
+
+        var validate_button = $('#validate-respondents-button');
+        validate_button.prop('disabled', false);
+        validate_button.removeClass('disabled-button');
+
+    }
+);
+
+$('#validate-respondents-button').click(function () {
+
+        var id = '#respondent-emails';
+        var input_text = $(id).val();
+        var emails = input_text.toLowerCase().match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+        $(id).val(emails == null ? '' : emails.sort().join('\n'));
+
+        if (emails == null) {
+            new Notify("Error", "No valid email addresses found in input.", 'error', {autoClose: true});
+        } else {
+
+            var upload_button = $('#upload-respondents-button');
+            upload_button.prop('disabled', false);
+            upload_button.removeClass('disabled-button');
+            upload_button.text('Upload ' + emails.length + ' email' + (emails.length > 1 ? 's' : ''));
+
+            var validate_button = $('#validate-respondents-button');
+            validate_button.prop('disabled', true);
+            validate_button.addClass('disabled-button');
+
+        }
+    }
+);
+
+$('#upload-respondents-button').click(function () {
+
+        var input_text = $('#respondent-emails').val();
+        var emails = input_text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi).sort();
+
+        var parameters = {
+            Token: token,
+            ProjectId: active_project.ProjectId,
+            Respondents: emails // array
+        };
+
+        Api("AddRespondents", parameters, AddRespondents_Success, Error);
+
+    }
+);
+
+$('#close-respondents-upload-button').click(function () {
+        $('#upload-respondents-ui').slideUp();
+        ;
+    }
+);
+
+$('#add-respondents-launch-button').click(function () {
+        $(".modal-ui").hide();
+        $('#upload-respondents-ui').slideDown();
+    }
+);
+
+$('#close-respondents-review-button').click(function () {
+        $('#review-respondent-emails').val('');
+        $('#review-respondents-ui').slideUp();
+    }
+);
+
+$('#review-emails-button').click(function () {
+
+        $('#review-respondent-emails').val('Loading...');
+        $(".modal-ui").hide();
+        $('#review-respondents-ui').slideDown();
+
+        var parameters = {
+            Token: token,
+            ProjectId: active_project.ProjectId
+        };
+
+        Api("GetCurrentProjectRespondentData", parameters, ReviewRespondents_Success, Error);
+
+    }
+);
+
+$('#schedule-emails-button').click(function () {
+        var parameters = {
+            Token: token,
+            ProjectId: active_project.ProjectId,
+            SurveyUrl: Products[active_project.ProductId].SurveyUrl,
+            EmailSubject: "Feedback Requested: " + active_project.DisplayName
+        };
+
+        Api("SendLinkToNewSurveyRespondents", parameters, SendInvitations_Success, Error);
+    }
+);
+
+$('#download-report-button').click(function () {
+        DownloadPowerPoint();
+    }
+);
+
+$('#project-info-name-edit').focusout(UpdateProjectName);
+
+$('#project-info-name-edit').change(UpdateProjectName);
+
+$('#project-info-name').click(function () {
+        $('#project-info-name-edit').val($('#project-info-name').text());
+
+        $('#project-info-name').hide();
+        var edit = $('#project-info-name-edit');
+        edit.show();
+        edit.focus();
+    }
+);
+
+// for testing
+if (document.location.href.split('//localhost/').length > 1) {
+    Login('espen', 'pw');
+}
+
 
 function GetTimeline(items) {
     var o = [];
@@ -1913,211 +2114,6 @@ function Signup_Success(o) {
     new Notify("Success", "Account succesfully created -- you may now log in", 'success', {autoClose: true});
     LogOut();
 }
-
-
-$(document).ready(
-    function () {
-
-        LoadProducts();
-
-        LoadHelp();
-
-        // Click Handlers
-
-        $('#edit-save-button').click(function () {
-
-                var parameters = {
-                    Token: token,
-                    Email: $('#edit-email').val(),
-                    Name: $('#edit-name').val(),
-                    Company: $('#edit-company').val(),
-                    Url: $('#survey-url').val()
-                };
-
-                Api("UpdateUser", parameters, EditAccount_Success, Error);
-            }
-        );
-
-        $('#edit-cancel-button').click(function () {
-                $('#account-summary').fadeIn();
-                $('#edit-form').hide();
-                $('#edit-link').fadeIn();
-            }
-        );
-
-        $('#signup-button').click(function () {
-
-                var parameters = {
-                    Id: $('#signup-userid').val(),
-                    Email: $('#signup-email').val(),
-                    Password: $('#signup-pw').val(),
-                    Name: $('#signup-name').val(),
-                    Company: $('#signup-company').val()
-                };
-
-                Api("AddUser", parameters, Signup_Success, Error);
-            }
-        );
-
-        $('#signup-cancel-button').click(function () {
-
-                $('#signup-userid').val('');
-                $('#signup-pw').val('');
-                $('#signup-email').val('');
-                $('#signup-name').val('');
-                $('#signup-company').val('');
-
-                $('#signup-form').hide();
-                $('#home-intro').fadeIn();
-                $('#login-form').fadeIn();
-            }
-        );
-
-        $('#login-button').click(function () {
-                var userid = $('#login-userid').val();
-                var pw = $('#login-pw').val();
-                Login(userid, pw);
-            }
-        );
-
-        $('#logout-button').click(function () {
-                LogOut();
-            }
-        );
-
-        $('#menuitem-users').click(function () {
-                var parameters = {
-                    Token: token
-                };
-
-                Api("GetUsers", parameters, LoadUserList_Success, Error);
-            }
-        );
-
-        $('#respondent-emails').keydown(function (e) {
-                var upload_button = $('#upload-respondents-button');
-                upload_button.prop('disabled', true);
-                upload_button.addClass('disabled-button');
-                upload_button.text('Upload emails');
-
-                var validate_button = $('#validate-respondents-button');
-                validate_button.prop('disabled', false);
-                validate_button.removeClass('disabled-button');
-
-            }
-        );
-
-        $('#validate-respondents-button').click(function () {
-
-                var id = '#respondent-emails';
-                var input_text = $(id).val();
-                var emails = input_text.toLowerCase().match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
-                $(id).val(emails == null ? '' : emails.sort().join('\n'));
-
-                if (emails == null) {
-                    new Notify("Error", "No valid email addresses found in input.", 'error', {autoClose: true});
-                } else {
-
-                    var upload_button = $('#upload-respondents-button');
-                    upload_button.prop('disabled', false);
-                    upload_button.removeClass('disabled-button');
-                    upload_button.text('Upload ' + emails.length + ' email' + (emails.length > 1 ? 's' : ''));
-
-                    var validate_button = $('#validate-respondents-button');
-                    validate_button.prop('disabled', true);
-                    validate_button.addClass('disabled-button');
-
-                }
-            }
-        );
-
-        $('#upload-respondents-button').click(function () {
-
-                var input_text = $('#respondent-emails').val();
-                var emails = input_text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi).sort();
-
-                var parameters = {
-                    Token: token,
-                    ProjectId: active_project.ProjectId,
-                    Respondents: emails // array
-                };
-
-                Api("AddRespondents", parameters, AddRespondents_Success, Error);
-
-            }
-        );
-
-        $('#close-respondents-upload-button').click(function () {
-                $('#upload-respondents-ui').slideUp();
-                ;
-            }
-        );
-
-        $('#add-respondents-launch-button').click(function () {
-                $(".modal-ui").hide();
-                $('#upload-respondents-ui').slideDown();
-            }
-        );
-
-        $('#close-respondents-review-button').click(function () {
-                $('#review-respondent-emails').val('');
-                $('#review-respondents-ui').slideUp();
-            }
-        );
-
-        $('#review-emails-button').click(function () {
-
-                $('#review-respondent-emails').val('Loading...');
-                $(".modal-ui").hide();
-                $('#review-respondents-ui').slideDown();
-
-                var parameters = {
-                    Token: token,
-                    ProjectId: active_project.ProjectId
-                };
-
-                Api("GetCurrentProjectRespondentData", parameters, ReviewRespondents_Success, Error);
-
-            }
-        );
-
-        $('#schedule-emails-button').click(function () {
-                var parameters = {
-                    Token: token,
-                    ProjectId: active_project.ProjectId,
-                    SurveyUrl: Products[active_project.ProductId].SurveyUrl,
-                    EmailSubject: "Feedback Requested: " + active_project.DisplayName
-                };
-
-                Api("SendLinkToNewSurveyRespondents", parameters, SendInvitations_Success, Error);
-            }
-        );
-
-        $('#download-report-button').click(function () {
-                DownloadPowerPoint();
-            }
-        );
-
-        $('#project-info-name-edit').focusout(UpdateProjectName);
-
-        $('#project-info-name-edit').change(UpdateProjectName);
-
-        $('#project-info-name').click(function () {
-                $('#project-info-name-edit').val($('#project-info-name').text());
-
-                $('#project-info-name').hide();
-                var edit = $('#project-info-name-edit');
-                edit.show();
-                edit.focus();
-            }
-        );
-
-        // for testing
-        if (document.location.href.split('//localhost/').length > 1) {
-            Login('espen', 'pw');
-        }
-    }
-)
 
 function PartnerLogo() {
     return PartnerData().LogoUrl;
