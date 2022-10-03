@@ -1,0 +1,493 @@
+.wrapper__notify {
+    z-index: 99999999;
+    filter: drop-shadow(0 0 10px #999);
+}
+
+.notify__container {
+    border-radius: 0;
+}
+
+.notify__close {
+    margin-top: 10px;
+}
+
+.notify__title {
+    margin-bottom: 0.5rem;
+    font-weight: 300 !important;
+    font-size: x-large;
+}
+
+.notify__description {
+    font-size: large;
+    font-weight: 300;
+}
+
+
+@font-face {
+    font-family: 'McKinseySans';
+    src: url(https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/OHI%20SQ%20POC/McKinseySans-Regular.woff2);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'McKinseySans';
+    src: url(https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/OHI%20SQ%20POC/McKinseySans-Light.woff2);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'McKinseySans';
+    src: url(https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/OHI%20SQ%20POC/McKinseySans-Medium.woff2);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'McKinseySans';
+    src: url(https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/OHI%20SQ%20POC/McKinseySans-Italic.woff2);
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'McKinseySans';
+    src: url(https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/OHI%20SQ%20POC/McKinseySans-LightItalic.woff2);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'McKinseySans';
+    src: url(https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/OHI%20SQ%20POC/McKinseySans-MediumItalic.woff2);
+    font-weight: 500;
+    font-style: italic;
+}
+
+* {
+    font-family: McKinseySans !Important;
+}
+
+.cavani_tm_mobile_menu .transition_link li {
+    display: block !important;
+}
+
+.disabled-button,
+.disabled-button:hover {
+    opacity: 0.2;
+    background-color: #e0e0e0 !important;
+    color: black !important;
+}
+
+button {
+    font-weight: 300;
+}
+
+#login-button {
+    height: 46px;
+    padding: 0 38px;
+    position: relative;
+    top: 1px;
+}
+
+.details-link {
+    text-decoration: none;
+    color: #2251ff;
+    font-weight: 300;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+
+.details-link:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #2251ff;
+}
+
+.round-button {
+    border-radius: 50%;
+    height: 50px !important;
+    width: 50px !important;
+    padding: 0 !important;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+
+.action-button {
+    background-color: #2251ff;
+    color: white;
+    border: 1px solid #2251ff;
+    transition: 0.2s;
+    /*padding: 8px 20px;*/
+    padding: 0.5rem 1.5rem;
+}
+
+.action-button:hover {
+    cursor: pointer;
+    color: #2251ff;
+    background-color: white;
+    -webkit-box-shadow: 0 7px 14px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 7px 14px 0 rgb(0 0 0 / 20%);
+}
+
+.add-project-button {
+    height: 40px;
+    padding: 6px 38px;
+    float: right;
+}
+
+
+#project-info-name:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
+
+.fa-solid {
+    /*filter: drop-shadow(2px 4px 6px #e0e0e0);*/
+}
+
+.metric-icon {
+    color: #00a9f4;
+}
+
+#project-list-title {
+    font-family: 'McKinseySans' !important;
+    font-weight: 300;
+}
+
+
+#home {
+    background-color: #051c2c;
+    background: linear-gradient(135deg, #051c2c 60%, #03339c 100%);
+    color: #fff;
+}
+
+#home #signup-form input {
+    width: 270px !important;
+}
+
+#home h3 {
+    font-weight: 500;
+}
+
+#home a,
+#home h2,
+#home h3,
+#home span,
+#home b {
+    color: white;
+}
+
+#home .line {
+    background-color: #c0c0c0;
+}
+
+#home h3 {
+
+}
+
+#home .partner-logo {
+    filter: invert(1);
+}
+
+.metric-tile {
+    min-width: 250px;
+    padding: 20px 0px 0px 0px;
+    margin: 2px;
+    background-color: white;
+    border: 0;
+}
+
+.metric-value {
+    white-space: nowrap;
+    font-size: xx-large;
+    color: black;
+}
+
+.metric-name {
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-size: smaller;
+}
+
+.metric-link {
+    color: #2251ff;
+    text-decoration: none;
+    font-size: 10px;
+    margin-right: 20px;
+}
+
+.metric-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.metric-cell {
+    position: relative;
+    top: -20px;
+    padding-right: 40px;
+}
+
+.metric-icon {
+    padding-left: 20px;
+    position: relative;
+    top: 6px;
+}
+
+textarea {
+    margin-top: 10px;
+    background-color: #F6FBFF;
+}
+
+#review-respondents-ui,
+#upload-respondents-ui {
+    padding: 20px 40px;
+    border: 0;
+    background-color: white;
+}
+
+.add-effect {
+    transition: 0.2s;
+}
+
+.add-effect:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.signature {
+    font-family: "Cedarville Cursive" !important;
+    font-size: x-large;
+    color: #00a9f4;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.displaynone {
+    display: none;
+}
+
+#project-list-welcome-msg {
+    max-width: 66%;
+    font-weight: 300;
+}
+
+.active-project-tile {
+    /*background-color: #FFFFF9 !important;*/
+    /*filter: drop-shadow(0 0 10px #000);*/
+}
+
+.project-tile {
+    cursor: pointer;
+    width: 300px;
+    padding: 16px 25px 10px 25px;
+    margin: 2px;
+    background-color: white;
+    border: 0;
+    text-align: center;
+    color: black;
+    min-height: 350px;
+}
+
+.new-project-button {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    min-height: unset;
+    float: right;
+    margin-left: 40px;
+}
+
+.project-tile-wrapper {
+    transition: .2s;
+}
+
+.tile {
+    margin: 2px;
+    background-color: white;
+    border: 0;
+    min-width: 200px;
+    padding: 12px 20px;
+}
+
+.tile:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px #999);
+}
+
+#review-respondents-ui:hover,
+#upload-respondents-ui:hover,
+.metric-tile:hover,
+.new-project-button:hover,
+.project-tile-wrapper:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px #999);
+    /*transform: scale(1.2);*/
+}
+
+
+.metric-tile:hover {
+    cursor: unset;
+}
+
+
+.project-type {
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.project-display-name {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    min-height: 55px !important;
+    font-family: Georgia !important;
+}
+
+.project-created-date {
+    font-size: 12px;
+}
+
+.project-image {
+    margin-top: 30px;
+    border-radius: 50%;
+    margin-left: 55px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right;
+    background-size: cover;
+    height: 140px;
+    width: 140px;
+    filter: grayscale(0.5);
+}
+
+select {
+    background-color: #F6FBFF !important;
+    border: 1px solid #c0c0c0;
+}
+
+fieldset {
+    background-color: #F6FBFF;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid #f0f0f0;
+}
+
+.cavani_tm_section .section_inner:before {
+    background-color: unset;
+}
+
+.highlight-word {
+    text-decoration: underline;
+}
+
+.preview-text {
+    color: #999;
+}
+
+.tab {
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+button:hover,
+.tab:hover {
+    cursor: pointer;
+}
+
+.active-tab {
+    background-color: #00a9f4 !important;
+    color: white !important
+}
+
+
+.tab-contents {
+    display: none;
+}
+
+.edit-input {
+    width: 500px;
+    background-color: #C8DAE4;
+    margin-bottom: 20px;
+}
+
+.data-cell {
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid #c0c0c0;
+}
+
+.header-cell {
+    font-weight: 600;
+}
+
+.private-menu-bullet {
+    display: none;
+}
+
+.page-block {
+    padding: 40px 40px;
+}
+
+#project-count,
+h1, h2, h3, h4 {
+    font-weight: 500;
+    font-family: Georgia !important;
+}
+
+.active-project-tile-wrapper::before {
+    content: "★";
+    font-size: 20px;
+    padding: 0;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: black;
+    position: absolute;
+    opacity: 0.2;
+}
+
+.active-project-bullet {
+    display: none !important;
+}
+
+#project-list {
+    margin-top: 20px;
+}
+
+.cavani_tm_home .name {
+    text-transform: unset;
+}
+
+h6 {
+    font-weight: 400
+}
+
+.author {
+    font-size: xx-small;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 4px;
+}
+
+#demo-container {
+    z-index: 99999;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.cavani_tm_about .univ ul li .place h3 {
+    font-weight: 500;
+    font-family: 'McKinseySans' !important;
+}

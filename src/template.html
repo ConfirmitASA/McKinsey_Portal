@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+
+    <link href="https://www.cssscript.com/demo/custom-notifications-notify/dist/notify.css" rel="stylesheet">
+
+    <!-- SCRIPTS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@latest/dist/pptxgen.bundle.js"></script>
+
+    <script src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/jquery.js"></script>
+    <script type="text/javascript"
+            src="https://www.jqueryscript.net/demo/Canvas-Table-QR-Code-Generator/jquery.qrcode.js"></script>
+    <script type="text/javascript"
+            src="https://www.jqueryscript.net/demo/Canvas-Table-QR-Code-Generator/qrcode.js"></script>
+    <!-- /SCRIPTS -->
+
+    <script type="text/javascript"
+            src="https://www.cssscript.com/demo/custom-notifications-notify/dist/notify.js"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Employee Listening Hub">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:image"
+          content="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/the%20top%20trends%20in%20tech%202022/the-top-technology-trends-of-2022_1296421142_thumb_1536x1536-v3.jpg"/>
+    <title>Employee Listening Hub</title>
+
+
+    <!-- STYLES -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css"
+          href="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/plugins.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/style.css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+
+</head>
+
+<body>
+
+
+<!-- Demo Container -->
+<div id="demo-container">
+    <div style="width: 100%; height: 40px; padding: 6px 20px; background-color: #C8DAE4;">
+        <a style="float: right" href="javascript:CloseDemo()">Close Demo</a>
+    </div>
+    <div id="demo"></div>
+</div>
+<!-- End Demo Container -->
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="loader_line"></div>
+</div>
+<!-- /PRELOADER -->
+
+<!-- WRAPPER ALL -->
+<div class="cavani_tm_all_wrap" data-magic-cursor="show" data-enter="fadeInUp" data-exit="">
+
+    <div class="cavani_tm_left_border"></div>
+    <div class="cavani_tm_right_border"></div>
+
+    <!-- MOBILE MENU -->
+    <div class="cavani_tm_topbar">
+        <div class="topbar_inner">
+            <div class="logo" data-type="text">
+                <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
+                <!--<a class="image" href="#"><img src="img/logo/dark.png" alt="" /></a>-->
+                <a class="text" href="#"><span class=page-title>Employee Listening Hub</span></a>
+            </div>
+
+            <div class="trigger">
+                <div class="hamburger hamburger--slider">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MOBILE MENU -->
+    <div class="cavani_tm_mobile_menu">
+        <div class="inner">
+            <div class="wrapper">
+                <div class="avatar">
+                    <div class="image"
+                         data-img-url="https://images.pexels.com/photos/3968083/pexels-photo-3968083.jpeg?auto=compress&cs=tinysrgb&w=1600"></div>
+                </div>
+                <div class="menu_list">
+                    <ul class="transition_link">
+
+                        <li class="hide-after-login-bullet active"><a href="#home">Home</a></li>
+                        <li class="private-menu-bullet"><a href="#projects">Projects</a></li>
+                        <li class="private-menu-bullet active-project-bullet"><a href="#active-project-info">Project
+                            Home</a></li>
+                        <li class="private-menu-bullet active-project-bullet"><a href="#active-project">Project
+                            Config</a></li>
+                        <li class="private-menu-bullet"><a href="#account">Account</a></li>
+                        <!--<li class="private-menu-bullet"><a id="menuitem-users" href="#users">Users</a></li>-->
+                        <li class="private-menu-bullet"><a href="#add-project">Solutions</a></li>
+                        <li class="private-menu-bullet"><a href="#help">Help</a></li>
+                        <li class="hide-after-login-bullet"><a href="#about">About</a></li>
+                        <li class="private-menu-bullet"><a
+                                onclick="javascript:setTimeout( function(){ LogOut() }, 1000);" href="#logout">Log
+                            Out</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><img class="svg"
+                                             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/facebook.svg"
+                                             alt=""/></a></li>
+                        <li><a href="#"><img class="svg"
+                                             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/twitter.svg"
+                                             alt=""/></a></li>
+                        <li><a href="#"><img class="svg"
+                                             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/instagram.svg"
+                                             alt=""/></a></li>
+                        <li><a href="#"><img class="svg"
+                                             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/dribbble.svg"
+                                             alt=""/></a></li>
+                        <li><a href="#"><img class="svg"
+                                             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/tik-tok.svg"
+                                             alt=""/></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p>Copyright &copy; 2022</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /MOBILE MENU -->
+
+    <!-- HEADER -->
+    <div class="cavani_tm_header">
+        <div class="logo" data-type="text">
+            <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
+            <!--<a class="image" href="#"><img src="img/logo/dark.png" alt="" /></a>-->
+            <a class="text" href="#"><span class="page-title">Employee Listening Hub</span></a>
+        </div>
+        <div class="menu">
+            <ul class="transition_link">
+                <li class="hide-after-login-bullet active"><a id="menuitem-home" href="#home">Home</a></li>
+                <li class="private-menu-bullet"><a id="menuitem-projects" href="#projects">Projects</a></li>
+                <li class="private-menu-bullet active-project-bullet"><a id="menuitem-active-project-info"
+                                                                         href="#active-project-info">Project Home</a>
+                </li>
+                <li class="private-menu-bullet active-project-bullet"><a id="menuitem-active-project"
+                                                                         href="#active-project">Project Config</a></li>
+                <li class="private-menu-bullet"><a id="menuitem-account" href="#account">Account</a></li>
+                <!--<li class="private-menu-bullet"><a id="menuitem-users" href="#users">Users</a></li>-->
+                <li class="private-menu-bullet"><a id="menuitem-add-project" href="#add-project">Solutions</a></li>
+                <li class="private-menu-bullet"><a id="menuitem-help" href="#help">Help</a></li>
+                <li class="hide-after-login-bullet"><a href="#about">About</a></li>
+                <li class="private-menu-bullet"><a onclick="javascript:setTimeout( function(){ LogOut() }, 1000);"
+                                                   id="menuitem-logout" href="#logout">Log Out</a></li>
+                <!--
+                <li><a href="#survey_lookahead">Look Ahead</a></li>
+                <li><a href="#survey_breakthroughs">Breakthroughs</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                -->
+            </ul>
+            <span class="ccc"></span>
+        </div>
+    </div>
+    <!-- /HEADER -->
+
+    <!-- MAINPART -->
+    <div class="cavani_tm_mainpart">
+
+        <div class="author_image">
+            <!--<div class="main ripple" id="ripple" style="filter:grayscale(0);" data-img-url="https://www.mckinsey.com/~/media/mckinsey/careers%20redesign/forward/forward-page-thumb_1536x1536_1076927118.jpg"></div>-->
+            <div class="main ripple" id="ripple" style="filter:grayscale(0);"></div>
+        </div>
+
+        <div class="main_content">
+
+            <!-- HOME -->
+            <div class="cavani_tm_section animated" id="home">
+                <div class="cavani_tm_home">
+                    <div class="content">
+
+                        <div id="home-intro">
+                            <img style="width: 10vw; margin-bottom: 2.5vw;" class="partner-logo">
+
+                            <h3 class="name">Employee Listening Hub</h3>
+                            <span class="line"></span>
+                        </div>
+
+                        <!-- LOGIN FORM -->
+                        <div id="login-form">
+
+                            <h3 class="job">
+									<span class="cd-headline clip"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+										<span class="blc">Performance is the ability to</span>
+										<span class="cd-words-wrapper">
+										<b class="is-visible">manage</b>
+										<b>align</b>
+										<b>grow</b>
+										</span>
+										<span>organizations.</span>
+									</span>
+                            </h3>
+
+                            <div style="width: 570px; margin-top: 30px; margin-bottom: 20px; padding: 0; border: 0px solid black; display: inline-block">
+
+                                <input id="login-userid" placeholder="userid" type=text style="width: 220px"></input>
+                                <input id="login-pw" placeholder="password" type=password style="width: 220px"></input>
+
+                                <div class="cavani_tm_button transition_link" style="display: contents">
+                                    <!--<a href="#contact" style="margin-right: 20px; margin-bottom: 20px;">Members</a>-->
+                                    <button class="action-button" id="login-button" type=button>Login</button>
+                                </div>
+
+                                <div id="login-error-message"></div>
+                            </div>
+
+
+                            <div class="xcavani_tm_button transition_link">
+                                <!--<a href="#contact" style="margin-right: 20px; margin-bottom: 20px;">Members</a>-->
+                                <a href="javascript:Signup();" id="signup-link">Not a member? Sign up now</a>
+                            </div>
+                        </div>
+                        <!-- END OF LOGIN FORM -->
+
+                        <!-- SIGNUP FORM -->
+                        <div id="signup-form" style="display: none">
+                            <h2>Sign Up Form</h2>
+                            <div style="width: 570px; margin-top: 30px; margin-bottom: 20px; padding: 0; border: 0px solid black; display: inline-block">
+
+                                <input id="signup-userid" placeholder="userid" type=text
+                                       style="width: 220px"></input><br>
+                                <input id="signup-pw" placeholder="password" type=password style="width: 220px"></input><br>
+                                <input id="signup-email" placeholder="email" type=text style="width: 220px"></input><br>
+                                <input id="signup-name" placeholder="your full name" type=text
+                                       style="width: 220px"></input><br>
+                                <input id="signup-company" placeholder="company name" type=text
+                                       style="width: 220px"></input><br>
+
+                                <div style="margin-top: 40px"></div>
+                                <div class="cavani_tm_button transition_link" style="display: contents;">
+                                    <button class="action-button" id="signup-button" type=button
+                                            style="height: 42px; float: left;">Sign up
+                                    </button>
+                                    <button class="action-button" id="signup-cancel-button" type=button
+                                            style="height: 42px; margin-left: 20px">Cancel
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="signup-error-message"></div>
+                        </div>
+                        <!-- END OF SIGNUP FORM -->
+
+                        <!-- LOGIN STATUS -->
+                        <div style="display: none;" id="logged-in">
+                            <input id="survey-url" type="hidden"></input>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /HOME -->
+
+
+            <!-- PROJECTS -->
+            <div class="cavani_tm_section" id="projects">
+                <div class="cavani_tm_projects">
+                    <div class="content">
+
+
+                        <div class="page-block">
+
+                            <h2 id="project-page-title"></h2>
+
+                            <div id="project-list">
+                                <!--<button onclick="javascript:SimulateClick('#menuitem-add-project');" id="add-first-project" type=button style="float: right; height: 40px; border: 0;background-color: #333333; padding: 20px; color: white; padding: 6px 38px;">-->
+
+                                <!-- New Project Tile -->
+                                <div onclick="javascript:SimulateClick('#menuitem-add-project');"
+                                     class="action-button round-button new-project-button">
+                                    +
+                                </div>
+                                <!--</button>-->
+
+                                <h4 id="project-list-title" style="margin-bottom: 20px">
+                                    All Research <span id="project-count"></span>
+                                </h4>
+
+                                <div id="project-list-welcome-msg"></div>
+
+                                <div class="session-text" style="margin: 20px 0 20px; display: none" id='your-projects'>
+                                    Loading ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /PROJECTS -->
+
+
+            <!-- PROJECT INFO-->
+            <div class="cavani_tm_section" id="active-project-info">
+                <div class="cavani_tm_project_info">
+                    <div class="content">
+
+
+                        <div class="page-block">
+
+                            <!-- Refresh Data Link -->
+                            <button type="button" class="action-button" style="float: right;"
+                                    onclick="RefreshProjectData();">
+                                Refresh Data
+                            </button>
+
+                            <h2>Project Home</h2>
+
+
+                            <div style="margin-top: 20px;">
+
+
+                                <div style="display: flex; flex-wrap:wrap;">
+                                    <!-- PROJECT NAME -->
+                                    <div class="metric-tile">
+                                        <table>
+                                            <tr>
+                                                <td class="metric-icon">
+                                                    <i onclick="SimulateClick('#menuitem-active-project');"
+                                                       style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                       class="fa-sharp fa-solid fa-shield"></i>
+                                                </td>
+
+                                                <td class="metric-cell">
+                                                    <h4 class="session-text metric-value project-name"
+                                                        id="project-info-name" style="font-size: x-large;"></h4>
+                                                    <input type="text" style="display: none; font-size: 16px"
+                                                           id="project-info-name-edit"></input>
+                                                    <h6 class="metric-name">Project</h6>
+                                                    <a href="javascript:SimulateClick('#menuitem-active-project');"
+                                                       class="metric-link">Configure</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!-- EMAIL COUNT -->
+                                    <div class="metric-tile">
+                                        <table>
+                                            <tr>
+                                                <td class="metric-icon add-effect">
+                                                    <button id="add-respondents-launch-button" type="button"
+                                                            style="z-index:2; border: 0;background-color: black; color: white; padding: 2px 4px; border-radius: 4px; position: absolute; margin-left: 26px;">
+                                                        + Add
+                                                    </button>
+                                                    <i onclick="$('#add-respondents-launch-button').click();"
+                                                       style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                       class="fa-solid fa-database"></i>
+                                                </td>
+
+                                                <td class="metric-cell">
+                                                    <h4 class="session-text metric-value" id="project-respondent-count">
+                                                        --</h4>
+                                                    <h6 class="metric-name">Emails Uploaded</h6>
+                                                    <a onclick="$('#add-respondents-launch-button').click();"
+                                                       class="metric-link" id="add-emails-button">Add</a>
+                                                    <a class="metric-link" id="review-emails-button">Review</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!-- INVITATIONS SENT -->
+                                    <div class="metric-tile">
+                                        <table>
+                                            <tr>
+                                                <td class="metric-icon">
+                                                    <i onclick="alert('Later.');"
+                                                       style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                       class="fa-sharp fa-solid fa-envelope"></i>
+                                                </td>
+
+                                                <td class="metric-cell">
+                                                    <h4 class="session-text metric-value" id="project-invited-count">
+                                                        --</h4>
+                                                    <h6 class="metric-name">Invitations Sent</h6>
+                                                    <a class="metric-link" id="schedule-emails-button">Send Now</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                    <!-- SUBMITTED SURVEYS -->
+                                    <div class="metric-tile">
+                                        <table>
+                                            <tr>
+                                                <td class="metric-icon">
+                                                    <i onclick="alert('Later.');"
+                                                       style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                       class="fa-solid fa-chart-pie"></i>
+                                                </td>
+
+                                                <td class="metric-cell" style="border-right: 0px">
+                                                    <h4 class="session-text metric-value" id="project-response-count">
+                                                        --</h4>
+                                                    <h6 class="metric-name">Submitted Surveys</h6>
+                                                    <a class="metric-link" id="download-report-button">Download
+                                                        Report</a>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div style="display:none" class="modal-ui" id="upload-respondents-ui">
+                                    <button class="action-button" id="close-respondents-upload-button"
+                                            style="float: right;">Close
+                                    </button>
+                                    <h4 style="margin-bottom: 10px">Add Respondents</h4>
+                                    <div style="font-weight: 300">
+                                        Type in email addresses or paste a block of text from Excel or any other source.
+                                        <br>
+                                        (Note: This will <u>not</u> send out email invitations.)
+                                    </div>
+                                    <textarea style="display: block; height: 120px; width: 500px"
+                                              id="respondent-emails"></textarea>
+                                    <div class="project-data" id="respondent-upload-count"></div>
+                                    <div>
+                                        <button class="action-button" id="validate-respondents-button"
+                                                style="padding: 10px; margin-top: 20px;">Validate Emails
+                                        </button>
+                                        <button disabled class="action-button disabled-button"
+                                                id="upload-respondents-button" style="padding: 10px; margin-top: 20px;">
+                                            Upload emails
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <div style="display:none" class="modal-ui" id="review-respondents-ui">
+                                    <button class="action-button" id="close-respondents-review-button"
+                                            style="float: right;">Close
+                                    </button>
+                                    <h4 style="margin-bottom: 10px">Uploaded Respondents</h4>
+                                    <div style="font-weight: 300">
+                                        This is a list of emails already uploaded to the survey.
+                                    </div>
+
+                                    <textarea readonly class="project-data"
+                                              style="display: block; height: 150px; width: 500px"
+                                              id="review-respondent-emails"></textarea>
+                                    <!--<div id="respondent-upload-count"></div>-->
+                                    <div>
+                                    </div>
+                                </div>
+
+
+                                <br>
+
+                                <div class="session-text" id="project-timeline"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /PROJECT INFO -->
+
+            <!-- PROJECT CONFIG -->
+            <div class="cavani_tm_section" id="active-project">
+                <div class="cavani_tm_active_project">
+                    <div class="content" style="margin-top: 0">
+
+                        <div class="page-block">
+
+                            <h2>Project Config</h2>
+                            <div class="session-text" id='active-project-form' style="margin: 20px 0 20px 0;"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /PROJECT CONFIG -->
+
+            <!-- USERS -->
+            <div class="cavani_tm_section" id="users">
+                <div class="cavani_tm_users">
+                    <div class="content">
+
+
+                        <div class="page-block">
+
+                            <h2>Users</h2>
+
+                            <div id="user-list" style="margin: 40px 0px;">
+                                <h4 style="margin-bottom: 20px">
+                                    All registered users
+                                </h4>
+                                <h6>
+                                    Access to this page/info will be role based.
+                                </h6>
+                                <div style="margin: 20px 0 20px;" id='system-users'>
+                                    Loading ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /USERS -->
+
+
+            <!-- ACCOUNT -->
+            <div class="cavani_tm_section" id="account">
+                <div class="cavani_tm_account">
+                    <div class="content">
+
+                        <div class="page-block">
+
+                            <button class="action-button" id="logout-button" type=button
+                                    style="height: 42px; float: right;">Log Out
+                            </button>
+                            <h2>Your Account</h2>
+
+                            <table id="account-summary" style="margin-top: 40px">
+                                <tr>
+                                    <td style="position: relative; top: 8px; padding-right: 20px; text-align: center">
+                                        <img style="width: 80px"
+                                             src="https://icon-library.com/images/corporate-icon/corporate-icon-5.jpg">
+                                    </td>
+                                    <td>
+                                        <h3 class="session-text" id="account-company-name"
+                                            style="font-weight: 400; padding: 0; margin: 0;"></h3>
+                                        <h5 class="session-text" id="account-user-display-name"
+                                            style="margin: 0; margin-right: 12px; padding: 0; display: inline-block; font-weight: 300"></h5>
+                                        <h8 class="session-text" id="account-user-email"
+                                            style="margin: 0; margin-right: 12px; padding: 0; color: #999; display: inline-block; font-weight: 400"></h8>
+                                        <br>
+                                        <div style="height: 40px">
+                                            <a class="metric-link" id="edit-link" href="javascript:EditProfile();">Edit
+                                                Profile</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div id="edit-form"
+                                 style="filter: drop-shadow(0 0 10px #999); display: none; background-color: white; border: 1px solid #c0c0c0; padding: 20px 40px; margin: 40px 0px; padding-bottom: 70px;">
+                                <img class="partner-logo" style="width: 100px; margin-bottom: 20px; float: right;">
+                                <h4 style="margin-bottom: 20px">Edit Profile</h4>
+
+                                <input class="session-input edit-input" placeholder="company" type=text
+                                       id="edit-company"><br>
+                                <input class="session-input edit-input" placeholde="full name" type=text
+                                       id="edit-name" style="display: inline-block; width: 250px">
+                                <input class="session-input edit-input" placeholder="email"
+                                       style="display: inline-block; width: 250px; margin-bottom: 20px;" type=text
+                                       id="edit-email">
+                                <br>
+
+                                <button class="action-button" id="edit-save-button" type=button
+                                        style="height: 42px; float: left;">Save
+                                </button>
+                                <button class="action-button" id="edit-cancel-button" type=button
+                                        style="height: 42px; margin-left: 20px">Cancel
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ACCOUNT -->
+
+
+            <!-- HELP -->
+            <div class="cavani_tm_section" id="help">
+                <div class="cavani_tm_help">
+                    <div class="content">
+
+                        <div class="page-block">
+
+                            <h2>Help</h2>
+                            <div style="font-weight: 300">Whatever the issue is, McKinsey is here to help you succeed.
+                            </div>
+                            <div id="help-topics">
+                                <div style="margin: 20px 0 20px; display: none" id='help-tiles'>
+                                    Loading ...
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /HELP -->
+
+
+            <!-- ABOUT -->
+            <div class="cavani_tm_section" id="about">
+                <div class="section_inner">
+                    <div class="cavani_tm_about">
+                        <div class="biography">
+                            <div class="cavani_tm_title">
+                                <span>About Employee Listening Hub</span>
+                            </div>
+                            <div class="wrapper">
+                                <div class="left">
+                                    <p>
+                                    <h4>The Employee Listening Hub applies data and rigor to the most important
+                                        organizational decisions.</h4>
+                                    </p>
+                                    <p>
+                                        Sustained performance depends more than ever on the ability to manage, align,
+                                        and grow organizations. Too often, critical organizational decisions are made on
+                                        the basis of instinct and personal bias. The Employee Listening Hub solves that
+                                        problem by bringing “hard” data, analytics, and technology to the “soft” art of
+                                        organizational leadership.
+                                    </p>
+                                </div>
+                                <div class="right">
+                                    <img style="filter:grayscale(0.8); width: 300px; margin-top: 20px"
+                                         class="partner-logo">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume">
+                            <div class="wrapper">
+                                <div class="education">
+                                    <div class="cavani_tm_title">
+                                        <span>Timeline</span>
+                                    </div>
+                                    <div class="list">
+                                        <div class="univ">
+                                            <ul>
+                                                <li>
+                                                    <div class="list_inner">
+                                                        <div class="time">
+                                                            <span>Oct 2022</span>
+                                                        </div>
+                                                        <div class="place">
+                                                            <h3>Website established</h3>
+                                                            <span>Version 1.0</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="list_inner">
+                                                        <div class="time">
+                                                            <span>Mar 2022</span>
+                                                        </div>
+                                                        <div class="place">
+                                                            <h3>First members onboarded</h3>
+                                                            <span>Intermountain, Northwell</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="list_inner">
+                                                        <div class="time">
+                                                            <span>Jan 2022</span>
+                                                        </div>
+                                                        <div class="place">
+                                                            <h3>Established</h3>
+                                                            <span>McKinsey & Company</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="experience">
+                                    <div class="cavani_tm_title">
+                                        <span>Other Events</span>
+                                    </div>
+                                    <div class="list">
+                                        <div class="univ">
+                                            <ul>
+                                                <li>
+                                                    <div class="list_inner">
+                                                        <div class="time">
+                                                            <span>Apr 2022</span>
+                                                        </div>
+                                                        <div class="place">
+                                                            <h3>Acquisition of Forsta</h3>
+                                                            <span>Press Ganey</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="partners">
+                            <div class="cavani_tm_title">
+                                <span>Partners</span>
+                            </div>
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/1.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/2.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/3.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/4.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/5.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/1.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/2.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list_inner">
+                                            <img src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/3.png"
+                                                 alt=""/>
+                                            <a class="cavani_tm_full_link" href="#"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /ABOUT -->
+
+
+            <!-- SOLUTIONS -->
+            <div class="cavani_tm_section" id="add-project">
+                <!--<div class="section_inner">-->
+                <div class="page-block">
+                    <div class="cavani_tm_portfolio">
+                        <div class="cavani_tm_title">
+
+                            <h2>Our Solutions</h2>
+
+                            <div id="product-list" style="margin-top: 40px"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /SOLUTIONS -->
+
+
+        </div>
+    </div>
+    <!-- /MAINPART -->
+
+    <!-- FOOTER -->
+    <div class="cavani_tm_footer">
+        <div class="copyright">
+            <p>Copyright &copy; 2022</p>
+        </div>
+        <div class="social">
+            <ul>
+                <li><a href="#"><img class="svg"
+                                     src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/facebook.svg"
+                                     alt=""/></a></li>
+                <li><a href="#"><img class="svg"
+                                     src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/twitter.svg"
+                                     alt=""/></a></li>
+                <li><a href="#"><img class="svg"
+                                     src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/instagram.svg"
+                                     alt=""/></a></li>
+                <li><a href="#"><img class="svg"
+                                     src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/dribbble.svg"
+                                     alt=""/></a></li>
+                <li><a href="#"><img class="svg"
+                                     src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/tik-tok.svg"
+                                     alt=""/></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- /FOOTER -->
+
+    <!-- MAGIC CURSOR -->
+    <!--
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+    -->
+    <!-- /MAGIC CURSOR -->
+
+</div>
+<!-- / WRAPPER ALL -->
+
+<!-- VELOCITY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"
+        integrity="sha384-fcLDUAwcSMMfmpKMJ0dO2//SL2WJ5/kkyz/yvgtmLXBEp3GdqrQF9ahRerhdLXn+"
+        crossorigin="anonymous"></script>
+
+<!--[if lt IE 10]>
+<script type="text/javascript"
+        src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/ie8.js"></script> <![endif]-->
+<script src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/plugins.js"></script>
+<script src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/init.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&callback=initMap"></script>
+<!-- /SCRIPTS -->
+
+
+</body>
+</html>
