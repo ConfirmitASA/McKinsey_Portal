@@ -17,15 +17,23 @@ module.exports = {
                 use: ['babel-loader'],
             },
             {
-                test: /\.svg$/,
-                use: 'svg-inline-loader'
-            },
+                test: /\.html$/i,
+                loader: "html-loader",
+              },
             {
-                test: /\.css$/,
+                test: /\.css$/i,
                 use: [
                     'style-loader',
                     'css-loader',
                 ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
             },
         ],
     },
@@ -42,6 +50,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new ESLintPlugin({
             emitError: false,
+            emitWarning: false,
             failOnError: false,
             failOnWarning: false,
         }),
