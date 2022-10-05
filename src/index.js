@@ -141,45 +141,100 @@ const Products = {
 			},
 
 			Wording: {
-				Label: 'Wording',
-				Sub: 'Survey texts',
-				Icon: 'fa-solid fa-spell-check',
-				Description:
-					'Selections on this tab impact how questions in your OHI survey are worded.',
-				Contents: {
-					CompanyWording: {
-						Label: 'Wording: Company',
-						Description: 'What word best describes the entity that is $company$?',
-						Type: 'Dropdown',
-						DefaultValue: 'company',
-						Options: {
-							company: {Label: 'Company'},
-							corporation: {Label: 'Corporation'},
-							enterprise: {Label: 'Enterprise'},
-							institution: {Label: 'Institution'},
-							organization: {Label: 'Organization'},
-							corporation: {Label: 'Corporation'},
-						},
-						HasPreview: true,
-					},
+                Label: "Wording",
+                Sub: "Survey texts",
+                Icon: "fa-solid fa-spell-check",
+                Description: "Selections on this tab impact how questions in your OHI survey are worded.",
+                Contents: {
+                    CompanyWording: {
+                        Label: 'Wording: Company',
+                        Description: 'What word best describes the entity that is $company$?',
+                        Type: 'Dropdown',
+                        DefaultValue: 'company',
+                        Options: {
+                            'company': {Label: 'Company'},
+                            'corporation': {Label: 'Corporation'},
+                            'enterprise': {Label: 'Enterprise'},
+                            'institution': {Label: 'Institution'},
+                            'organization': {Label: 'Organization'},
+                            'corporation': {Label: 'Corporation'}
+                        },
+                        HasPreview: true
+                    },
 
-					EmployeeWording: {
-						Label: 'Wording: Employee',
-						Description: 'What word best describes the people who work for $company$?',
-						Type: 'Dropdown',
-						DefaultValue: 'employees',
-						Options: {
-							agents: {Label: 'Agents'},
-							associates: {Label: 'Associates'},
-							employees: {Label: 'Employees'},
-							members: {Label: 'Members'},
-							representatives: {Label: 'Representatives'},
-							workers: {Label: 'Workers'},
-						},
-						HasPreview: true,
-					},
-				},
-			},
+                    EmployeeWording: {
+                        Label: 'Wording: Employee',
+                        Description: 'What word best describes the people who work for $company$?',
+                        Type: 'Dropdown',
+                        DefaultValue: 'employees',
+                        Options: {
+                            'agents': {Label: 'Agents'},
+                            'associates': {Label: 'Associates'},
+                            'employees': {Label: 'Employees'},
+                            'members': {Label: 'Members'},
+                            'representatives': {Label: 'Representatives'},
+                            'workers': {Label: 'Workers'}
+                        },
+                        HasPreview: true
+                    },
+
+                    ManagersWording: {
+                        Label: 'Wording: Managers',
+                        Description: 'What word best describes a person responsible for controlling or administering in $company$?',
+                        Type: 'Dropdown',
+                        DefaultValue: 'managers',
+                        Options: {
+                            'managers': {Label: 'Managers'},
+                            'supervisors': {Label: 'Supervisors'},
+                            'executives': {Label: 'Executives'},
+                            'administrators': {Label: 'Administrators'}
+                        },
+                        HasPreview: true
+                    },
+
+                    LeadersWording: {
+                        Label: 'Wording: Leaders',
+                        Description: 'Which word best describes persons who commands $company$?',
+                        Type: 'Dropdown',
+                        DefaultValue: 'leaders',
+                        Options: {
+                            'leaders': {Label: 'Leaders'},
+                            'cheifs': {Label: 'Chiefs'},
+                            'principals': {Label: 'Principals'}
+                        },
+                        HasPreview: true
+                    },
+
+                    BossWording: {
+                        Label: 'Wording: Boss',
+                        Description: 'Which word best describes a person who is in charge of employees in $company$?',
+                        Type: 'Dropdown',
+                        DefaultValue: 'boss',
+                        Options: {
+                            'boss': {Label: 'Boss'},
+                            'head': {Label: 'Head'},
+                            'supervisor': {Label: 'Supervisor'},
+                            'team leader': {Label: 'Team leader'}
+                        },
+                        HasPreview: true
+                    },
+
+                    CustomersWording: {
+                        Label: 'Wording: Customers',
+                        Description: 'Which word best describes people who use services of $company$?',
+                        Type: 'Dropdown',
+                        DefaultValue: 'customers',
+                        Options: {
+                            'customers': {Label: 'Customers'},
+                            'consumers': {Label: 'Consumers'},
+                            'purchasers': {Label: 'Purchasers'},
+                            'clients': {Label: 'Clients'}
+                        },
+                        HasPreview: true
+                    }
+
+                }
+            },
 
 			Contents: {
 				Label: 'Optional Content',
@@ -502,66 +557,166 @@ function PreviewPalette() {
 }
 
 function PreviewCompanyWording() {
-	var value = $('#' + 'CompanyWording').val();
+    var value = $('#' + 'CompanyWording').val();
 
-	var statements = [
-		'The $wording-company$ effectively measures the performance of core business activities',
-		'Each unit of the $wording-company$ has explicit targets for its operating performance',
-	];
+    var statements = [
+        "The $wording-company$ effectively measures the performance of core business activities",
+        "Each unit of the $wording-company$ has explicit targets for its operating performance"
+    ];
 
-	var o = [];
-	o.push('<ul class=preview-text>');
-	for (var i = 0; i < statements.length; ++i) {
-		o.push(
-			'<li>' +
-				statements[i].replace(
-					'$wording-company$',
-					'<span class="highlight-word">' + value + '</span>'
-				) +
-				'</li>'
-		);
-	}
+    var o = [];
+    o.push('<ul class=preview-text>');
+    for (var i = 0; i < statements.length; ++i) {
+        o.push('<li>' + statements[i].replace('$wording-company$', '<span class="highlight-word">' + value + '</span>') + '</li>');
+    }
 
-	o.push('</ul>');
+    o.push('</ul>');
 
-	var x = $('#preview-CompanyWording');
-	x.css('display', 'none');
-	x.html(o.join(''));
-	x.fadeIn();
+    var x = $('#preview-CompanyWording');
+    x.css('display', 'none');
+    x.html(o.join(''));
+    x.fadeIn();
 
-	PreviewEmployeeWording();
+    PreviewEmployeeWording();
 }
 
 function PreviewEmployeeWording() {
-	var value = $('#' + 'EmployeeWording').val();
-	var company_value = $('#' + 'CompanyWording').val();
+    var value = $('#' + 'EmployeeWording').val();
+    var company_value = $('#' + 'CompanyWording').val();
 
-	var statements = [
-		'The $wording-company$’s $wording-employees$ are highly motivated',
-		'Managers in the $wording-company$ find ways to make work more meaningful to their $wording-employees$',
-	];
+    var statements = [
+        "The $wording-company$’s $wording-employees$ are highly motivated",
+        "Managers in the $wording-company$ find ways to make work more meaningful to their $wording-employees$"
+    ];
 
-	var o = [];
-	o.push('<ul class=preview-text>');
-	for (var i = 0; i < statements.length; ++i) {
-		o.push(
-			'<li>' +
-				statements[i]
-					.replace(
-						'$wording-employees$',
-						'<span class="highlight-word">' + value + '</span>'
-					)
-					.replace('$wording-company$', company_value) +
-				'</li>'
-		);
-	}
+    var o = [];
+    o.push('<ul class=preview-text>');
+    for (var i = 0; i < statements.length; ++i) {
+        o.push(
+            '<li>' +
+            statements[i].replace('$wording-employees$', '<span class="highlight-word">' + value + '</span>').replace('$wording-company$', company_value) +
+            '</li>');
+    }
 
-	o.push('</ul>');
+    o.push('</ul>');
 
-	var x = $('#preview-EmployeeWording');
-	x.css('display', 'none');
-	x.html(o.join(''));
-	x.fadeIn();
+    var x = $('#preview-EmployeeWording');
+    x.css('display', 'none');
+    x.html(o.join(''));
+    x.fadeIn();
+
+    PreviewManagersWording();
+}
+
+function PreviewManagersWording() {
+    var value = $('#' + 'ManagersWording').val();
+    var company_value = $('#' + 'CompanyWording').val();
+    var employee_value = $('#' + 'EmployeeWording').val();
+
+    var statements = [
+        "The $wording-company$’s $wording-managers$ are highly educated",
+        "$wording-managers$ in the $wording-company$ find ways to make work more meaningful to their $wording-employees$"
+    ];
+
+    var o = [];
+    o.push('<ul class=preview-text>');
+    for (var i = 0; i < statements.length; ++i) {
+        o.push(
+            '<li>' +
+            statements[i].replace('$wording-managers$', '<span class="highlight-word">' + value + '</span>').replace('$wording-company$', company_value).replace('$wording-employees$', employee_value) +
+            '</li>');
+    }
+
+    o.push('</ul>');
+
+    var x = $('#preview-ManagersWording');
+    x.css('display', 'none');
+    x.html(o.join(''));
+    x.fadeIn();
+
+    PreviewLeadersWording();
+}
+
+function PreviewLeadersWording() {
+    var value = $('#' + 'LeadersWording').val();
+    var company_value = $('#' + 'CompanyWording').val();
+
+    var statements = [
+        "The $wording-company$’s $wording-leaders$ rule!",
+        "$wording-leaders$ in the $wording-company$ know the way"
+    ];
+
+    var o = [];
+    o.push('<ul class=preview-text>');
+    for (var i = 0; i < statements.length; ++i) {
+        o.push(
+            '<li>' +
+            statements[i].replace('$wording-leaders$', '<span class="highlight-word">' + value + '</span>').replace('$wording-company$', company_value) +
+            '</li>');
+    }
+
+    o.push('</ul>');
+
+    var x = $('#preview-LeadersWording');
+    x.css('display', 'none');
+    x.html(o.join(''));
+    x.fadeIn();
+
+    PreviewBossWording();
+}
+
+function PreviewBossWording() {
+    var value = $('#' + 'BossWording').val();
+    var company_value = $('#' + 'CompanyWording').val();
+
+    var statements = [
+        "My $wording-boss$ is kind and calm",
+        "In my $wording-company$ we have the best $wording-boss$ possible"
+    ];
+
+    var o = [];
+    o.push('<ul class=preview-text>');
+    for (var i = 0; i < statements.length; ++i) {
+        o.push(
+            '<li>' +
+            statements[i].replace('$wording-boss$', '<span class="highlight-word">' + value + '</span>').replace('$wording-company$', company_value) +
+            '</li>');
+    }
+
+    o.push('</ul>');
+
+    var x = $('#preview-BossWording');
+    x.css('display', 'none');
+    x.html(o.join(''));
+    x.fadeIn();
+
+    PreviewCustomersWording();
+}
+
+function PreviewCustomersWording() {
+    var value = $('#' + 'CustomersWording').val();
+    var company_value = $('#' + 'CompanyWording').val();
+
+    var statements = [
+        "My $wording-company$ $wording-customers$ are always polite and percise",
+        "In the $wording-company$ I work for $wording-customers$ are always satisfied"
+    ];
+
+    var o = [];
+    o.push('<ul class=preview-text>');
+    for (var i = 0; i < statements.length; ++i) {
+        o.push(
+            '<li>' +
+            statements[i].replace('$wording-customers$', '<span class="highlight-word">' + value + '</span>').replace('$wording-company$', company_value) +
+            '</li>');
+    }
+
+    o.push('</ul>');
+
+    var x = $('#preview-CustomersWording');
+    x.css('display', 'none');
+    x.html(o.join(''));
+    x.fadeIn();
 }
 
 function DynamicText(s) {
