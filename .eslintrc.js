@@ -21,5 +21,5 @@ module.exports = {
   },
   rules: {},
   plugins: ['html', '@html-eslint'],
-  ignorePatterns: ['src/template/*', 'webpack.*.js', 'dist'],
+  ignorePatterns: ['src/template/*', 'webpack.*.js', 'dist', 'docs'],
 };
