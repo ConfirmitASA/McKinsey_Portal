@@ -199,6 +199,9 @@ FakesAssemblies/
 # WebStorm specific
 .idea
 
+#VSCode specicifc
+.vscode
+
 node_modules
 dist
 docs
