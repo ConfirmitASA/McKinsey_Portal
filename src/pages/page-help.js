@@ -72,8 +72,6 @@ function CreateHelpTile(id, options, onClick) {
   tileElement.insertAdjacentElement('beforeend', divider);
   tileElement.insertAdjacentElement('beforeend', text);
 
-  console.log(wrapper);
-
   return wrapper;
 }
 
