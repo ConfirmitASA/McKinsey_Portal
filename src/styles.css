@@ -485,3 +485,26 @@ h6 {
   font-weight: 500;
   font-family: 'McKinseySans' !important;
 }
+
+/* Help tile */
+
+.tiles-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tile-help .tile__image {
+  margin-top: 20px;
+}
+
+.tile-help .tile__text {
+  height: 80px;
+}
+
+.tile__divider {
+  width: 80px;
+  margin-left: 82.5px;
+  margin-top: 10px;
+  border-top: 1px solid #e0e0e0;
+}
