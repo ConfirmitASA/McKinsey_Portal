@@ -15,27 +15,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
 
-        <link href="https://www.cssscript.com/demo/custom-notifications-notify/dist/notify.css" rel="stylesheet">
-
-        <!-- SCRIPTS -->
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@latest/dist/pptxgen.bundle.js"></script>
-
-    <script src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/jquery.js"></script>
-    <script type="text/javascript"
-        src="https://www.jqueryscript.net/demo/Canvas-Table-QR-Code-Generator/jquery.qrcode.js"></script>
-    <script type="text/javascript"
-        src="https://www.jqueryscript.net/demo/Canvas-Table-QR-Code-Generator/qrcode.js"></script>
-        <!-- /SCRIPTS -->
-
-    <script type="text/javascript"
-        src="https://www.cssscript.com/demo/custom-notifications-notify/dist/notify.js"></script>
-
-
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Employee Listening Hub">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -50,10 +29,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css"
-            href="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/plugins.css">
-        <link rel="stylesheet" type="text/css"
-            href="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/style.css">
         <!--[if lt IE 9]>
             <script type="text/javascript"
             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/modernizr.custom.js"></script>
@@ -63,13 +38,156 @@
     </head>
 
     <body>
+        <!-- Preloader styles  -->
+        <style>
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            #preloader {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                width: 100%;
+                z-index: 99999;
+                display: flex;
+            }
+
+            #preloader:before,
+            #preloader:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 50%;
+                height: 100%;
+                z-index: -1;
+                background-color: #000;
+                -webkit-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                transition: all 0.3s ease 0s;
+            }
+
+            #preloader:after {
+                left: auto;
+                right: 0;
+            }
+
+            #preloader .loader_line {
+                margin: auto;
+                width: 1px;
+                height: 250px;
+                position: relative;
+                overflow: hidden;
+                -webkit-transition: all 0.8s ease 0s;
+                -o-transition: all 0.8s ease 0s;
+                transition: all 0.8s ease 0s;
+            }
+
+            .loader_line:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 1px;
+                height: 0%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background-color: #fff;
+                -webkit-animation: lineheight 1000ms ease-in-out 0s forwards;
+                -o-animation: lineheight 1000ms ease-in-out 0s forwards;
+                animation: lineheight 1000ms ease-in-out 0s forwards;
+            }
+
+            .loader_line:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background-color: #777;
+                -webkit-transform: translateY(-100%);
+                -ms-transform: translateY(-100%);
+                -o-transform: translateY(-100%);
+                transform: translateY(-100%);
+                -webkit-animation: lineround 1200ms linear 0s infinite;
+                -o-animation: lineround 1200ms linear 0s infinite;
+                animation: lineround 1200ms linear 0s infinite;
+                animation-delay: 2000ms;
+            }
+
+            @keyframes lineheight {
+                0% {
+                    height: 0%;
+                }
+
+                100% {
+                    height: 100%;
+                }
+            }
+
+            @keyframes lineround {
+                0% {
+                    -webkit-transform: translateY(-100%);
+                    -ms-transform: translateY(-100%);
+                    -o-transform: translateY(-100%);
+                    transform: translateY(-100%);
+                }
+
+                100% {
+                    -webkit-transform: translateY(200%);
+                    -ms-transform: translateY(200%);
+                    -o-transform: translateY(200%);
+                    transform: translateY(200%);
+                }
+            }
+
+            .preloaded .loader_line:after {
+                opacity: 0;
+            }
+
+            .preloaded .loader_line {
+                opacity: 0;
+                height: 100% !important;
+            }
+
+            .preloaded:before,
+            .preloaded:after {
+                -webkit-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+                -o-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+                animation: preloadedzero 300ms ease-in-out 500ms forwards;
+            }
+
+            @keyframes preloadedzero {
+                0% {
+                    width: 50%;
+                }
+
+                100% {
+                    width: 0%;
+                }
+            }
+        </style>
 
         <!-- Demo Container -->
         <div id="demo-container">
-            <div style="width: 100%; height: 40px; padding: 6px 20px; background-color: #C8DAE4;">
-                <a style="float: right" href="javascript:CloseDemo()">Close Demo</a>
+            <div id="demo-wrapper">
+                <button class="action-button" id="close-demos-button" style="float: right;">Close</button>
+                <div id="demo">                
+                </div>
             </div>
-            <div id="demo"></div>
+               
+            
         </div>
         <!-- End Demo Container -->
 
@@ -111,7 +229,8 @@
                     <div class="wrapper">
                         <div class="avatar">
                             <div class="image"
-                                data-img-url="https://images.pexels.com/photos/3968083/pexels-photo-3968083.jpeg?auto=compress&cs=tinysrgb&w=1600"></div>
+                                data-img-url="https://images.pexels.com/photos/3968083/pexels-photo-3968083.jpeg?auto=compress&cs=tinysrgb&w=1600">
+                            </div>
                         </div>
                         <div class="menu_list">
                             <ul class="transition_link">
@@ -120,20 +239,24 @@
                                     <a href="#home">Home</a>
                                 </li>
                                 <li class="private-menu-bullet">
-                                    <a href="#projects">Projects</a>
+                                    <a href="#projects">My Projects</a>
                                 </li>
                                 <li class="private-menu-bullet active-project-bullet">
-                                    <a href="#active-project-info">Project
-                                        Home</a></li>
+                                    <a href="#active-project-info">Current Project</a></li>
                                 <li class="private-menu-bullet active-project-bullet">
                                     <a href="#active-project">Project
-                                        Config</a></li>
+                                        Configuration</a></li>
                                 <li class="private-menu-bullet">
                                     <a href="#account">Account</a>
                                 </li>
-                                <!--<li class="private-menu-bullet"><a id="menuitem-users" href="#users">Users</a></li>-->
                                 <li class="private-menu-bullet">
                                     <a href="#add-project">Solutions</a>
+                                </li>
+                                <li class="admin-menu-bullet private-menu-bullet">
+                                    <a href="#users">Users</a>
+                                </li>
+                                <li class="admin-menu-bullet private-menu-bullet">
+                                    <a href="#companies">Companies</a>
                                 </li>
                                 <li class="private-menu-bullet">
                                     <a href="#help">Help</a>
@@ -143,8 +266,7 @@
                                 </li>
                                 <li class="private-menu-bullet">
                                     <a
-                                        onclick="javascript:setTimeout( function(){ LogOut() }, 1000);" href="#logout">Log
-                                        Out</a></li>
+                                        href="#logout">Log Out</a></li>
 
 
                             </ul>
@@ -152,27 +274,27 @@
                         <div class="social">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/McKinsey/">
                                         <img class="svg"
                                             src="./assets/images/facebook.svg"
                                             alt=""></a></li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://twitter.com/McKinsey">
                                         <img class="svg"
                                             src="./assets/images/twitter.svg"
                                             alt=""></a></li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.instagram.com/mckinseyco/">
                                         <img class="svg"
                                             src="./assets/images/instagram.svg"
                                             alt=""></a></li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://dribbble.com/tags/mckinsey">
                                         <img class="svg"
                                             src="./assets/images/dribbble.svg"
                                             alt=""></a></li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.tiktok.com/discover/Mckinsey">
                                         <img class="svg"
                                             src="./assets/images/tik-tok.svg"
                                             alt=""></a></li>
@@ -201,21 +323,26 @@
                             <a id="menuitem-home" href="#home">Home</a>
                         </li>
                         <li class="private-menu-bullet">
-                            <a id="menuitem-projects" href="#projects">Projects</a>
+                            <a id="menuitem-projects" href="#projects">My Projects</a>
                         </li>
                         <li class="private-menu-bullet active-project-bullet">
                             <a id="menuitem-active-project-info"
-                                href="#active-project-info">Project Home</a>
+                                href="#active-project-info">Current Project</a>
                         </li>
                         <li class="private-menu-bullet active-project-bullet">
                             <a id="menuitem-active-project"
-                                href="#active-project">Project Config</a></li>
+                                href="#active-project">Project Configuration</a></li>
                         <li class="private-menu-bullet">
                             <a id="menuitem-account" href="#account">Account</a>
                         </li>
-                        <!--<li class="private-menu-bullet"><a id="menuitem-users" href="#users">Users</a></li>-->
                         <li class="private-menu-bullet">
                             <a id="menuitem-add-project" href="#add-project">Solutions</a>
+                        </li>
+                        <li class="admin-menu-bullet private-menu-bullet">
+                            <a href="#users">Users</a>
+                        </li>
+                        <li class="admin-menu-bullet private-menu-bullet">
+                            <a href="#companies">Companies</a>
                         </li>
                         <li class="private-menu-bullet">
                             <a id="menuitem-help" href="#help">Help</a>
@@ -224,8 +351,8 @@
                             <a href="#about">About</a>
                         </li>
                         <li class="private-menu-bullet">
-                            <a onclick="javascript:setTimeout( function(){ LogOut() }, 1000);"
-                                id="menuitem-logout" href="#logout">Log Out</a></li>
+                            <a id="menuitem-logout" href="#logout">Log Out</a>
+                        </li>
                         <!--
                             <li><a href="#survey_lookahead">Look Ahead</a></li>
                             <li><a href="#survey_breakthroughs">Breakthroughs</a></li>
@@ -294,7 +421,7 @@
 
                                     <div class="xcavani_tm_button transition_link">
                                         <!--<a href="#contact" style="margin-right: 20px; margin-bottom: 20px;">Members</a>-->
-                                        <a href="javascript:Signup();" id="signup-link">Not a member? Sign up now</a>
+                                        <div class="link" id="signup-link">Not a member? Sign up now</div>
                                     </div>
                                 </div>
                                 <!-- END OF LOGIN FORM -->
@@ -360,8 +487,7 @@
                                         <!--<button onclick="javascript:SimulateClick('#menuitem-add-project');" id="add-first-project" type=button style="float: right; height: 40px; border: 0;background-color: #333333; padding: 20px; color: white; padding: 6px 38px;">-->
 
                                         <!-- New Project Tile -->
-                                        <div onclick="javascript:SimulateClick('#menuitem-add-project');"
-                                            class="action-button round-button new-project-button">
+                                        <div class="action-button round-button new-project-button">
                                             +
                                         </div>
                                         <!--</button>-->
@@ -388,17 +514,16 @@
                         <div class="cavani_tm_project_info">
                             <div class="content">
 
-
-                                <div class="page-block">
-
+                                <div class="project-subheader">
                                     <!-- Refresh Data Link -->
-                                    <button type="button" class="action-button" style="float: right;"
-                                        onclick="RefreshProjectData();">
+                                    <button type="button" id="refresh-data_button" class="action-button" style="float: right;">
                                         Refresh Data
                                     </button>
 
-                                    <h2>Project Home</h2>
-
+                                    <h2 class="project-name-edit-button" id="project-home-name">Current Project</h2>
+                                    <input type="text" class="project-name-edit-field" style="display: none" id="project-home-name-edit">
+                                </div>
+                                <div class="page-block">
 
                                     <div style="margin-top: 20px;">
 
@@ -408,20 +533,23 @@
                                             <div class="metric-tile">
                                                 <table>
                                                     <tr>
-                                                        <td class="metric-icon">
-                                                            <i onclick="SimulateClick('#menuitem-active-project');"
-                                                                style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
-                                                                class="fa-sharp fa-solid fa-shield"></i>
+                                                        <td class="metric-icon add-effect">
+                                                            <i style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                                class="fa-solid fa-gear"></i>
                                                         </td>
 
                                                         <td class="metric-cell">
-                                                            <h4 class="session-text metric-value project-name"
+                                                            <h4 style="display: none" class="session-text metric-value project-name project-name-edit-button"
                                                                 id="project-info-name" style="font-size: x-large;"></h4>
                                                             <input type="text" style="display: none; font-size: 16px"
                                                                 id="project-info-name-edit">
-                                                            <h6 class="metric-name">Project</h6>
-                                                            <a href="javascript:SimulateClick('#menuitem-active-project');"
-                                                                class="metric-link">Configure</a>
+                                                            <div id="configure_button-link"
+                                                                class="configure-project metric-name">Settings</div>
+                                                            <h6 class="metric-name">&nbsp</h6> <!--Configure your project -->
+                                                            <!-- <a id="rename_button"
+                                                                class="metric-link">Rename</a> -->
+                                                            <a id="config_button"
+                                                                class="metric-link">Configure your project</a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -432,19 +560,17 @@
                                                 <table>
                                                     <tr>
                                                         <td class="metric-icon add-effect">
-                                                            <button id="add-respondents-launch-button" type="button"
-                                                                style="z-index:2; border: 0;background-color: black; color: white; padding: 2px 4px; border-radius: 4px; position: absolute; margin-left: 26px;">
+                                                            <button id="add-respondents-launch-button" type="button" style="z-index:2; border: 0;background-color: black; color: white; padding: 2px 4px; border-radius: 4px; position: absolute; margin-left: 26px;">
                                                                 + Add
                                                             </button>
-                                                            <i onclick="$('#add-respondents-launch-button').click();"
-                                                                style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                            <i id="add-respondents-launch-icon" style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
                                                                 class="fa-solid fa-database"></i>
                                                         </td>
 
                                                         <td class="metric-cell">
                                                             <h4 class="session-text metric-value" id="project-respondent-count">--</h4>
-                                                            <h6 class="metric-name">Emails Uploaded</h6>
-                                                            <a onclick="$('#add-respondents-launch-button').click();"
+                                                            <h6 class="metric-name">Respondents Uploaded</h6>
+                                                            <a 
                                                                 class="metric-link" id="add-emails-button">Add</a>
                                                             <a class="metric-link" id="review-emails-button">Review</a>
                                                         </td>
@@ -456,8 +582,8 @@
                                             <div class="metric-tile">
                                                 <table>
                                                     <tr>
-                                                        <td class="metric-icon">
-                                                            <i onclick="alert('Later.');"
+                                                        <td class="metric-icon add-effect">
+                                                            <i id="send-emails-icon"
                                                                 style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
                                                                 class="fa-sharp fa-solid fa-envelope"></i>
                                                         </td>
@@ -466,7 +592,7 @@
                                                             <h4 class="session-text metric-value" id="project-invited-count">
                                                                 --</h4>
                                                             <h6 class="metric-name">Invitations Sent</h6>
-                                                            <a class="metric-link" id="schedule-emails-button">Send Now</a>
+                                                            <a class="metric-link" id="send-emails-button">Send Emails</a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -477,20 +603,46 @@
                                             <div class="metric-tile">
                                                 <table>
                                                     <tr>
-                                                        <td class="metric-icon">
-                                                            <i onclick="alert('Later.');"
+                                                        <td class="metric-icon add-effect">
+                                                            <i id="preview-report-icon"
                                                                 style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
                                                                 class="fa-solid fa-chart-pie"></i>
                                                         </td>
 
-                                                        <td class="metric-cell" style="border-right: 0px">
-                                                            <h4 class="session-text metric-value" id="project-response-count">--</h4>
+                                                        <td class="metric-cell submitted-cell" style="border-right: 0px">
+                                                            <h4 class="session-text metric-value" id="project-complete-count">--</h4>
                                                             <h6 class="metric-name">Submitted Surveys</h6>
-                                                            <a class="metric-link" id="download-report-button">Download Report</a>
+                                                            <a class="metric-link" id="preview-report-button">Report Preview</a>
+                                                            <a class="metric-link" id="download-report-button">Export to PPTX</a>
+                                                            
+                                                            <div class="file-loader hidden" id="download-report-loader"></div>
                                                         </td>
                                                     </tr>
                                                 </table>
                                             </div>
+
+                                            <!-- RESPONSE RATE -->
+                                            <div class="metric-tile">
+                                                <table>
+                                                    <tr>
+                                                        <td class="metric-icon">
+                                                            <i 
+                                                                style="margin-top: 8px; font-size: 60px; margin-right: 20px; font-family: 'Font Awesome 6 Free' !important;"
+                                                                class="fa-solid fa-line-chart"></i>
+                                                        </td>
+
+                                                        <td class="metric-cell" style="border-right: 0px">
+                                                            <h4 class="session-text metric-value" id="project-incomplete-rate">--</h4>
+                                                            <h6 class="metric-name">Incomplete</h6>
+                                                        </td>
+                                                        <td class="metric-cell" style="border-right: 0px">
+                                                            <h4 class="session-text metric-value" id="project-complete-rate">--</h4>
+                                                            <h6 class="metric-name">Complete</h6>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
                                         </div>
 
                                         <br>
@@ -503,19 +655,36 @@
                                             <div style="font-weight: 300">
                                                 Type in email addresses or paste a block of text from Excel or any other source.
                                                 <br>
+                                                Before uploading XLSX file, ensure you've set up <b>'email'</b> column header.
+                                                <br>
                                                 (Note: This will <u>not</u> send out email invitations.)
                                             </div>
-                                            <textarea style="display: block; height: 120px; width: 500px"
-                                                id="respondent-emails"></textarea>
+                                            <div id="respondent-emails" style="display: block; height: 120px; width: 500px; border: 1px solid #000; padding: 5px; overflow-y: auto; caret-color: #000;" contenteditable="true" spellcheck="false"></div>
                                             <div class="project-data" id="respondent-upload-count"></div>
-                                            <div>
-                                                <button class="action-button" id="validate-respondents-button"
+                                            <div class="add-respondents-dialogue">
+                                                <div>
+                                                    <label for="uploadXL" class="action-button" style="padding: 10px; margin-top: 20px;">Upload emails</label>
+                                                    <input id="uploadXL" type="file" name="files[]" style="display:none">
+                                                    <button class="action-button disabled-button" id="validate-respondents-button"
                                                     style="padding: 10px; margin-top: 20px;">Validate Emails
-                                                </button>
-                                                <button disabled class="action-button disabled-button"
-                                                    id="upload-respondents-button" style="padding: 10px; margin-top: 20px;">
-                                                    Upload emails
-                                                </button>
+                                                    </button>
+                                                    <button class="action-button"
+                                                    id="clear-emails-button" style="padding: 10px; margin-top: 20px;">
+                                                    Clear all
+                                                    </button>
+                                                    <button disabled class="action-button disabled-button"
+                                                    id="upload-respondents-button" style="padding: 10px; margin-top: 20px; margin-left: 40px">
+                                                    Load validated emails
+                                                    </button>
+                                                </div>
+                                                <div>
+                                                    <button class="action-button"
+                                                    id="download-import-form" style="padding: 10px; margin-top: 20px; margin-left: 40px">
+                                                    Download data template
+                                                    </button>
+                                                    <label for="upload-respondents" class="action-button" style="padding: 10px; margin-top: 20px;">Upload data</label>
+                                                    <input id="upload-respondents" type="file" name="files[]" style="display:none">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -537,6 +706,39 @@
                                             </div>
                                         </div>
 
+                                        <div style="display:none" class="modal-ui" id="send-emails-ui">
+                                            <button class="action-button" id="close-send-emails-button"
+                                                style="float: right;">Close
+                                            </button>
+                                            <h4 style="margin-bottom: 10px">Emailing</h4>
+                                            <div>
+                                                <select id="select-email-template">
+                                                    <option value="0">Please select an email</option>
+                                                    <option value="invitation">Invitation</option>
+                                                    <option value="reminder">Reminder</option>
+                                                    <option value="finalreminder">Final reminder</option>
+                                                </select>
+                                            </div>
+                                            <div id="iframe-wrapper">
+                                                <iframe id="email-template" style="padding: 10px; border: 1px solid #f0f0f0"></iframe>
+                                            </div>
+                                            <div>
+                                                <div class="email-button_container">
+                                                    <button class="action-button displaynone disabled-button" id="send-invites-button" disabled>
+                                                        Send invitations <img src="./assets/images/spinner.gif" alt="loading animation">
+                                                    </button>
+                                                    <button class="action-button displaynone disabled-button" id="send-reminders1-button" disabled>
+                                                        Send reminders <img src="./assets/images/spinner.gif" alt="loading animation">
+                                                    </button>
+                                                    <button class="action-button displaynone disabled-button" id="send-reminders2-button" disabled>
+                                                        Send final reminders <img src="./assets/images/spinner.gif" alt="loading animation">
+                                                    </button>
+                                                    <button class="action-button displaynone disabled-button" id="send-self" disabled>
+                                                        Send to yourself
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <br>
 
@@ -554,9 +756,16 @@
                         <div class="cavani_tm_active_project">
                             <div class="content" style="margin-top: 0">
 
+                                <div class="project-subheader" id="project-config-subheader">
+                                    <button type="button" id="back-to-project" class="action-button" style="float: right;">
+                                        Back to Project
+                                    </button>
+                                    <h2 class="project-name-edit-button" id="project-config-name">Project Config</h2>
+                                    <input type="text" class="project-name-edit-field" style="display: none" id="project-config-name-edit">
+                                </div>
+
                                 <div class="page-block">
 
-                                    <h2>Project Config</h2>
                                     <div class="session-text" id="active-project-form" style="margin: 20px 0 20px 0;"></div>
 
                                 </div>
@@ -566,31 +775,12 @@
                     <!-- /PROJECT CONFIG -->
 
                     <!-- USERS -->
-                    <div class="cavani_tm_section" id="users">
-                        <div class="cavani_tm_users">
-                            <div class="content">
-
-
-                                <div class="page-block">
-
-                                    <h2>Users</h2>
-
-                                    <div id="user-list" style="margin: 40px 0px;">
-                                        <h4 style="margin-bottom: 20px">
-                                            All registered users
-                                        </h4>
-                                        <h6>
-                                            Access to this page/info will be role based.
-                                        </h6>
-                                        <div style="margin: 20px 0 20px;" id="system-users">
-                                            Loading ...
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <include src="./template/users.inc"></include>
                     <!-- /USERS -->
+                    
+                    <!-- COMPANIES -->
+                    <include src="./template/companies.inc"></include>
+                    <!-- /COMPANIES -->
 
 
                     <!-- ACCOUNT -->
@@ -609,7 +799,7 @@
                                         <tr>
                                             <td style="position: relative; top: 8px; padding-right: 20px; text-align: center">
                                                 <img style="width: 80px"
-                                                    src="https://icon-library.com/images/corporate-icon/corporate-icon-5.jpg">
+                                                    src="./assets/images/corporate-icon-5.jpg" alt="icon with office building">
                                             </td>
                                             <td>
                                                 <h3 class="session-text" id="account-company-name"
@@ -620,8 +810,7 @@
                                                     style="margin: 0; margin-right: 12px; padding: 0; color: #999; display: inline-block; font-weight: 400"></h8>
                                                 <br>
                                                 <div style="height: 40px">
-                                                    <a class="metric-link" id="edit-link" href="javascript:EditProfile();">Edit
-                                                        Profile</a>
+                                                    <div class="metric-link" id="edit-link">Edit Profile</div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -629,13 +818,10 @@
 
                                     <div id="edit-form"
                                         style="filter: drop-shadow(0 0 10px #999); display: none; background-color: white; border: 1px solid #c0c0c0; padding: 20px 40px; margin: 40px 0px; padding-bottom: 70px;">
-                                        <img class="partner-logo" style="width: 100px; margin-bottom: 20px; float: right;">
+                                        <!--<img class="partner-logo" style="width: 100px; margin-bottom: 20px; float: right;">-->
                                         <h4 style="margin-bottom: 20px">Edit Profile</h4>
 
-                                        <input class="session-input edit-input" placeholder="company" type="text"
-                                            id="edit-company">
-                                        <br>
-                                        <input class="session-input edit-input" placeholde="full name" type="text"
+                                        <input class="session-input edit-input" placeholder="full name" type="text"
                                             id="edit-name" style="display: inline-block; width: 250px">
                                         <input class="session-input edit-input" placeholder="email"
                                             style="display: inline-block; width: 250px; margin-bottom: 20px;" type="text"
@@ -714,6 +900,9 @@
                                         <div class="education">
                                             <div class="cavani_tm_title">
                                                 <span>Timeline</span>
+                                            </div>
+                                            <div class="instruction">
+                                                <span>Put your estimated dates here</span>
                                             </div>
                                             <div class="list">
                                                 <div class="univ">
@@ -858,15 +1047,8 @@
                     <div class="cavani_tm_section" id="add-project">
                         <!--<div class="section_inner">-->
                         <div class="page-block">
-                            <div class="cavani_tm_portfolio">
-                                <div class="cavani_tm_title">
-
-                                    <h2>Our Solutions</h2>
-
-                                    <div id="product-list" style="margin-top: 40px"></div>
-
-                                </div>
-                            </div>
+                            <h2>Our Solutions</h2>
+                            <div id="product-list" style="margin-top: 40px"></div>
                         </div>
                     </div>
                     <!-- /SOLUTIONS -->
@@ -874,40 +1056,40 @@
 
                 </div>
             </div>
+            
             <!-- /MAINPART -->
 
             <!-- FOOTER -->
             <div class="cavani_tm_footer">
                 <div class="copyright">
-                    <p>Copyright &copy; 2022</p>
                 </div>
                 <div class="social">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/McKinsey/">
                                 <img class="svg"
                                     src="./assets/images/facebook.svg"
-                                    alt=""></a></li>
+                                    alt="facebook"></a></li>
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/McKinsey">
                                 <img class="svg"
                                     src="./assets/images/twitter.svg"
-                                    alt=""></a></li>
+                                    alt="twitter"></a></li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.instagram.com/mckinseyco/">
                                 <img class="svg"
                                     src="./assets/images/instagram.svg"
-                                    alt=""></a></li>
+                                    alt="instagram"></a></li>
                         <li>
-                            <a href="#">
+                            <a href="https://dribbble.com/tags/mckinsey">
                                 <img class="svg"
                                     src="./assets/images/dribbble.svg"
-                                    alt=""></a></li>
+                                    alt="dribbble"></a></li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.tiktok.com/discover/Mckinsey">
                                 <img class="svg"
                                     src="./assets/images/tik-tok.svg"
-                                    alt=""></a></li>
+                                    alt="tik-tok"></a></li>
                     </ul>
                 </div>
             </div>
@@ -923,18 +1105,12 @@
         </div>
         <!-- / WRAPPER ALL -->
 
-        <!-- VELOCITY -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"
-        integrity="sha384-fcLDUAwcSMMfmpKMJ0dO2//SL2WJ5/kkyz/yvgtmLXBEp3GdqrQF9ahRerhdLXn+"
-        crossorigin="anonymous"></script>
-
         <!--[if lt IE 10]>
             <script type="text/javascript"
             src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/ie8.js"></script> <![endif]-->
-<script src="https://survey.us.confirmit.com/isa/BDJPFRDMEYBPBKLVADAYFQCDAVIOEQJR/cavani/plugins.js"></script>
 
         <!-- /SCRIPTS -->
 
-
+     <div id="ReportingDataModal"></div>
     </body>
 </html>

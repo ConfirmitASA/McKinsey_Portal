@@ -1,34 +1,34 @@
+import helptTile1Image from '../assets/images/help-tile-1.jpg';
+import helptTile2Image from '../assets/images/help-tile-2.jpg';
+import helptTile3Image from '../assets/images/help-tile-3.jpg';
+import helptTile4Image from '../assets/images/help-tile-4.jpg';
 /**
  * List of Tiles
  * @const {Array.<{ImageUrl: string, Subject: string, Text: string}>} Help
  */
-const Help = [
+const HELP = [
   {
-    ImageUrl:
-      'https://images.pexels.com/photos/792199/pexels-photo-792199.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    ImageUrl: helptTile1Image,
     Subject: 'Submit a Ticket',
     Text:
       'Something unexpected has happened in the Employee Listening Hub, and I would like to submit a support ticket.',
   },
 
   {
-    ImageUrl:
-      'https://images.pexels.com/photos/3771074/pexels-photo-3771074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    ImageUrl: helptTile2Image,
     Subject: 'Schedule Training',
     Text:
       'I have questions about the Employee Listening Hub, and would like to schedule a training session.',
   },
 
   {
-    ImageUrl:
-      'https://images.pexels.com/photos/1194775/pexels-photo-1194775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    ImageUrl: helptTile3Image,
     Subject: 'Request Project Assistance',
     Text: "I'd like McKinsey to review my project before I deploy it to the organization.",
   },
 
   {
-    ImageUrl:
-      'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    ImageUrl: helptTile4Image,
     Subject: 'Help Me Fix My Business',
     Text:
       "My scores are not where they need to be, and I'd like McKinsey to help me resolve the underlying issues in my business.",
@@ -42,7 +42,7 @@ const Help = [
  * @param {any} onClick - a function that will be called whenever the tile is being clicked on
  * @returns {Element} - the new tile with specified image, title and text
  */
-function CreateHelpTile(id, options, onClick) {
+function createHelpTile(id, options, onClick) {
   const wrapper = document.createElement('div');
   wrapper.className = 'project-tile-wrapper';
 
@@ -76,18 +76,19 @@ function CreateHelpTile(id, options, onClick) {
 }
 
 /**
- * Render tiles specified in {@link Help}
+ * Render tiles specified in {@link HELP}
  * @function LoadHelp
  */
-export default function LoadHelp() {
-  const records = Help;
+export default function loadHelpPage() {
+  const records = HELP;
   const tilesContainer = document.createElement('div');
   tilesContainer.className = 'tiles-container';
 
   for (let i = 0; i < records.length; i += 1) {
     const record = records[i];
-    const tile = CreateHelpTile(i.toString(), record, () => {
+    const tile = createHelpTile(i.toString(), record, () => {
       console.log('Help tile on click placeholder');
+      alert('To be implemented');
     });
     tilesContainer.insertAdjacentElement('beforeend', tile);
   }

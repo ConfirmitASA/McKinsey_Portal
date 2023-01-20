@@ -3,3 +3,5 @@ package-lock.json
 dist
 node_modules
 *.html
+src/external/scripts
+src/external/styles
